@@ -235,6 +235,10 @@ impl private::SamplePrivate for i32 {
     fn to_sample_format() -> SampleFormat { SampleFormat::Int32 }
 }
 
+impl private::SamplePrivate for i16 {
+    fn to_sample_format() -> SampleFormat { SampleFormat::Int16 }
+}
+
 impl private::SamplePrivate for u8 {
     fn to_sample_format() -> SampleFormat { SampleFormat::UInt8 }
 }
@@ -255,6 +259,7 @@ pub trait Sample: private::SamplePrivate {
 
 impl Sample for f32 {}
 impl Sample for i32 {}
+impl Sample for i16 {}
 impl Sample for i8 {}
 impl Sample for u8 {}
 
